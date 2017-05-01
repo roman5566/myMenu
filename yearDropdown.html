@@ -1,0 +1,34 @@
+<!DOCTYPE=html>
+<html>
+<head>
+<title>year test</title>
+<meta charset="UTF-8">
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+$('#veh_year').append('<option value="Year">Year</option>');
+jQuery(document).ready(function () {
+	$('#veh_year').append('<option value="Other">Other</option>');
+	$('#veh_year').focus( function buildYearMenu() {
+		var d = new Date();
+
+		
+		for (i=d.getFullYear(); i>=1910; i--) {
+			 <!-- $('#veh_year').append('<option value="Other">Other</option>'); --> 
+			$('#veh_year').append('<option value="'+i+'">'+i+'</option>');
+		};
+	});
+
+});
+
+</script>
+	
+</head>
+
+<body>
+	<div id="year_dropdown">
+		<label type="text">Year</label>
+		<select id="veh_year" value="Year" placeholder="Year Menu"></select>
+	</div>
+</body>
+
+</html>
