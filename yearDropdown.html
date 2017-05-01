@@ -5,14 +5,13 @@
 <meta charset="UTF-8">
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script type="text/javascript">
-$('#veh_year').append('<option value="Year">Year</option>');
+$('#veh_year').append('<option value="Year">Year</option>');  <!-- // add Year to our dropdown, because it's empty on ready() // -->
 $(function () {
-	$('#veh_year').append('<option value="Other">Other</option>');
-	$('#veh_year').focus( function buildYearMenu() {
-		var d = new Date();
-		for (i=d.getFullYear(); i>=1910; i--) {
-			 <!-- $('#veh_year').append('<option value="Other">Other</option>'); --> 
-			$('#veh_year').append('<option value="'+i+'">'+i+'</option>');
+	$('#veh_year').append('<option value="Other">Other</option>');  // once dom is ready we append with value "other" //
+	$('#veh_year').focus( function buildYearMenu() {    // when cursor is focused on our select element id=veh_year, function buildYearMenu() is called //
+		var d = new Date();   // var d is assigned to new Date(), this gets us today's date //
+		for (i=d.getFullYear(); i>=1910; i--) {   // for loop, where i is d.getFullYear() before loop [gives us this year], then i is greater or equal to 1910, so we do i-- to take i and reduce by 1 //
+			$('#veh_year').append('<option value="'+i+'">'+i+'</option>');  // finally we append our option with the value of i.
 		};
 	});
 
